@@ -1,0 +1,65 @@
+{
+  "admins": [
+      {
+        "id": 1001,
+        "name": "Cool Admin guy",
+        "username": "root",
+        "password": "root" 
+      }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Leanne Graham",
+      "username": "Bret",
+      "password": "12345",
+      "questoins": [
+          {
+              "id": 1,
+              "question": "Are you gay?",
+              "options": [
+                  {
+                      "title": "Yes",
+                      "usersVotedId": [
+                          1, 2, 3
+                      ]
+                  },
+                  {
+                      "title": "No",
+                      "usersVotedId": [
+                          4, 5, 6
+                      ]
+                  }
+              ]
+          },
+          {
+            "id": 2,
+            "question": "Are you happy?",
+            "options": [
+                {
+                    "title": "Yes",
+                    "usersVotedId": [
+                        1, 2, 3
+                    ]
+                },
+                {
+                    "title": "No",
+                    "usersVotedId": [
+                        4, 5, 6
+                    ]
+                }
+            ]
+        }
+      ]
+    },
+    {
+        "id": 2,
+        "name": "John Doe",
+        "username": "John",
+        "password": "54321",
+        "questoins": [ ]
+      }
+  ],
+
+  "questions": []
+}

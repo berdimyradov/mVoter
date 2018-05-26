@@ -1,20 +1,11 @@
 {
-  "name": "@coreui/coreui-free-angular-admin-template",
+  "name": "mVoter",
   "version": "2.0.0-rc.0",
-  "description": "CoreUI Free Angular 2+ Admin Template",
+  "description": "mVoter app",
   "author": {
-    "name": "Łukasz Holeczek",
-    "url": "http://holeczek.pl",
-    "github": "https://github.com/mrholek",
-    "twitter": "https://twitter.com/lukaszholeczek"
+    "name": "Mekan Annayew"
   },
-  "contributors": [
-    {
-      "name": "Andrzej Kopański",
-      "url": "https://github.com/xidedix"
-    }
-  ],
-  "homepage": "https://coreui.io/angular",
+  "contributors": [ ],
   "copyright": "Copyright 2018 creativeLabs Łukasz Holeczek",
   "license": "MIT",
   "scripts": {
@@ -23,7 +14,8 @@
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "json:server": "json-server --watch db.json"
   },
   "private": true,
   "dependencies": {
@@ -36,14 +28,15 @@
     "@angular/platform-browser": "6.0.2",
     "@angular/platform-browser-dynamic": "6.0.2",
     "@angular/router": "6.0.2",
-    "@coreui/coreui": "^2.0.1",
     "@coreui/angular": "^2.0.0-rc.0",
+    "@coreui/coreui": "^2.0.1",
     "@coreui/coreui-plugin-chartjs-custom-tooltips": "^1.2.0",
     "@coreui/icons": "^0.1.1",
     "chart.js": "2.7.2",
     "core-js": "2.5.6",
     "flag-icon-css": "3.0.0",
     "font-awesome": "^4.7.0",
+    "json-server": "^0.12.2",
     "moment": "2.22.1",
     "mutationobserver-shim": "^0.3.2",
     "ng2-charts": "1.6.0",
