@@ -39,6 +39,7 @@ import { BsDropdownModule } from "ngx-bootstrap/dropdown";
 import { TabsModule } from "ngx-bootstrap/tabs";
 import { ChartsModule } from "ng2-charts/ng2-charts";
 import { AuthGuard } from "./auth/auth.guard";
+import { LogoutComponent } from './views/logout/logout.component';
 
 @NgModule({
   imports: [
@@ -61,7 +62,8 @@ import { AuthGuard } from "./auth/auth.guard";
     P404Component,
     P500Component,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    LogoutComponent
   ],
   providers: [
     {
