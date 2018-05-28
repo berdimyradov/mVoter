@@ -40,6 +40,10 @@ import { TabsModule } from "ngx-bootstrap/tabs";
 import { ChartsModule } from "ng2-charts/ng2-charts";
 import { AuthGuard } from "./auth/auth.guard";
 import { LogoutComponent } from './views/logout/logout.component';
+import { UsersComponent } from './views/users/users.component';
+import { UniversitiesComponent } from './views/universities/universities.component';
+import { AdminGuard } from "./auth/admin.guard";
+import { AdminPageLayoutComponent } from './views/admin/admin.page.layout.component';
 
 @NgModule({
   imports: [
@@ -63,14 +67,18 @@ import { LogoutComponent } from './views/logout/logout.component';
     P500Component,
     LoginComponent,
     RegisterComponent,
-    LogoutComponent
+    LogoutComponent,
+    UsersComponent,
+    UniversitiesComponent,
+    AdminPageLayoutComponent
   ],
   providers: [
     {
       provide: LocationStrategy,
       useClass: HashLocationStrategy
     },
-    AuthGuard
+    AuthGuard,
+    AdminGuard
   ],
   bootstrap: [AppComponent]
 })

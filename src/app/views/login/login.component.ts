@@ -17,23 +17,48 @@ export class LoginComponent {
       fetch(`${environment.apiUrl}/admins`),
       fetch(`${environment.apiUrl}/users`)
     ]).then(async res => {
-      const allUsers = Array.prototype.concat(
-        await res[0].json(),
-        await res[1].json()
+      const admins = await res[0].json();
+      const users = await res[1].json();
+
+      const admin = admins.find(
+        admin =>
+          admin.username === this.username && admin.password === this.password
       );
 
-      const user = allUsers.find(user => (user.username === this.username && user.password === this.password))
+      const user = users.find(
+        user =>
+          user.username === this.username && user.password === this.password
+      );
 
-      if(user) {
-        localStorage.setItem('currentUser', JSON.stringify(user));
-        this.router.navigate(['/dashboard']);
+      if (user || admin) {
+        if (user) {
+          localStorage.setItem(
+            "currentUser",
+            JSON.stringify({
+              ...user,
+              type: "user"
+            })
+          );
+          this.router.navigate(["/dashboard"]);
+        }
+
+        if (admin) {
+          localStorage.setItem(
+            "currentUser",
+            JSON.stringify({
+              ...admin,
+              type: "admin"
+            })
+          );
+          this.router.navigate(["/admin/users"]);
+        }
       } else {
-        alert('No such a user exist! Try again!')
+        alert("No such a user exist! Try again!");
       }
     });
   }
 
   onRegister(event) {
-    this.router.navigate(['/register']);
+    this.router.navigate(["/register"]);
   }
 }
