@@ -1,11 +1,11 @@
 {
   "admins": [
-      {
-        "id": 1001,
-        "name": "Cool Admin guy",
-        "username": "root",
-        "password": "root" 
-      }
+    {
+      "id": 1001,
+      "name": "Cool Admin guy",
+      "username": "root",
+      "password": "root"
+    }
   ],
   "users": [
     {
@@ -14,52 +14,97 @@
       "username": "Bret",
       "password": "12345",
       "questoins": [
-          {
-              "id": 1,
-              "question": "Are you gay?",
-              "options": [
-                  {
-                      "title": "Yes",
-                      "usersVotedId": [
-                          1, 2, 3
-                      ]
-                  },
-                  {
-                      "title": "No",
-                      "usersVotedId": [
-                          4, 5, 6
-                      ]
-                  }
+        {
+          "id": 1,
+          "question": "Are you gay?",
+          "options": [
+            {
+              "title": "Yes",
+              "usersVotedId": [
+                1,
+                2,
+                3
               ]
-          },
-          {
-            "id": 2,
-            "question": "Are you happy?",
-            "options": [
-                {
-                    "title": "Yes",
-                    "usersVotedId": [
-                        1, 2, 3
-                    ]
-                },
-                {
-                    "title": "No",
-                    "usersVotedId": [
-                        4, 5, 6
-                    ]
-                }
-            ]
+            },
+            {
+              "title": "No",
+              "usersVotedId": [
+                4,
+                5,
+                6
+              ]
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "question": "Are you happy?",
+          "options": [
+            {
+              "title": "Yes",
+              "usersVotedId": [
+                1,
+                2,
+                3
+              ]
+            },
+            {
+              "title": "No",
+              "usersVotedId": [
+                4,
+                5,
+                6
+              ]
+            }
+          ]
         }
       ]
     },
     {
-        "id": 2,
-        "name": "John Doe",
-        "username": "John",
-        "password": "54321",
-        "questoins": [ ]
-      }
+      "id": 2,
+      "name": "John Doe",
+      "username": "John",
+      "password": "54321",
+      "questoins": []
+    }
   ],
-
-  "questions": []
+  "questions": [],
+  "universities": [
+    {
+      "id": 1,
+      "name": "Belarusian State University of Informatics and Radioelectronics",
+      "shortName": "BSUIR",
+      "location": "Belarus, Minsk"
+    },
+    {
+      "id": 2,
+      "name": "Minsk State Linguistic University",
+      "shortName": "MSLU",
+      "location": "Belarus, Minsk"
+    },
+    {
+      "id": 3,
+      "name": "Baranovichi State University",
+      "shortName": "BarSU",
+      "location": "Belarus, Baranovichi"
+    },
+    {
+      "id": 4,
+      "name": "Belarusian State University",
+      "shortName": "BSU",
+      "location": "Belarus, Minsk"
+    },
+    {
+      "id": 5,
+      "name": "Turkmen State University",
+      "shortName": "TSU",
+      "location": "Turkmenistan, Ashgabat"
+    },
+    {
+      "id": 6,
+      "name": "Turkmen State University of Energy",
+      "shortName": "TSUE",
+      "location": "Turkmenistan, Mary"
+    }
+  ]
 }

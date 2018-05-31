@@ -12,10 +12,14 @@ export class UsersComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-      fetch(`${environment.apiUrl}/users`)
-      .then(res => res.json())
-      .then(users => this.users = users)
-      .catch(error => console.error(error));
+    this.getUsers();
+  }
+
+  getUsers() {
+    fetch(`${environment.apiUrl}/users`)
+    .then(res => res.json())
+    .then(users => this.users = users)
+    .catch(error => console.error(error));
   }
 
   onUserEdit(event, user) {
