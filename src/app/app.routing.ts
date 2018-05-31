@@ -14,6 +14,9 @@ import { UsersComponent } from "./views/users/users.component";
 import { UniversitiesComponent } from "./views/universities/universities.component";
 import { AdminGuard } from "./auth/admin.guard";
 import { AdminPageLayoutComponent } from "./views/admin/admin.page.layout.component";
+import { RatingsComponent } from './views/ratings/ratings.component';
+import { UsersLayoutComponent } from "./views/users-layout/users-layout.component";
+import { VotingComponent } from "./views/voting/voting.component";
 
 export const routes: Routes = [
   {
@@ -54,6 +57,35 @@ export const routes: Routes = [
       title: "Register Page"
     }
   },
+  
+  {
+    path: 'user',
+    component: UsersLayoutComponent,
+    children: [
+      {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'ratings'
+      },
+      {
+        path: 'ratings',
+        component: RatingsComponent,
+        data: {
+          title: 'Ratings page'
+        }
+      },
+      {
+        path: 'voting',
+        component: VotingComponent,
+        data: {
+          title: 'Voting page'
+        }
+      }
+    ],
+
+    canActivate: [AuthGuard]
+  },
+  
   {
     path: "admin",
     component: AdminPageLayoutComponent,

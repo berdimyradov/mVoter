@@ -44,6 +44,9 @@ import { UsersComponent } from './views/users/users.component';
 import { UniversitiesComponent } from './views/universities/universities.component';
 import { AdminGuard } from "./auth/admin.guard";
 import { AdminPageLayoutComponent } from './views/admin/admin.page.layout.component';
+import { RatingsComponent } from './views/ratings/ratings.component';
+import { UsersLayoutComponent } from './views/users-layout/users-layout.component';
+import { VotingComponent } from './views/voting/voting.component';
 
 @NgModule({
   imports: [
@@ -70,7 +73,10 @@ import { AdminPageLayoutComponent } from './views/admin/admin.page.layout.compon
     LogoutComponent,
     UsersComponent,
     UniversitiesComponent,
-    AdminPageLayoutComponent
+    AdminPageLayoutComponent,
+    RatingsComponent,
+    UsersLayoutComponent,
+    VotingComponent
   ],
   providers: [
     {

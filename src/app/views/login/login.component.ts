@@ -39,7 +39,7 @@ export class LoginComponent {
               type: "user"
             })
           );
-          this.router.navigate(["/dashboard"]);
+          this.router.navigate(["/user/ratings"]);
         }
 
         if (admin) {
