@@ -66,17 +66,24 @@
       "username": "John",
       "password": "54321",
       "questoins": []
+    },
+    {
+      "questions": [],
+      "name": "foobar",
+      "username": "foobar",
+      "password": "foobar",
+      "id": 3
+    },
+    {
+      "questions": [],
+      "name": "barfoo",
+      "username": "barfoo",
+      "password": "barfoo",
+      "id": 4
     }
   ],
   "questions": [],
   "universities": [
-    {
-      "id": 4,
-      "name": "Belarusian State University",
-      "shortName": "BSU",
-      "location": "Belarus, Minsk",
-      "votesCount": 1
-    },
     {
       "id": 5,
       "name": "Turkmen State University",
@@ -111,6 +118,19 @@
       "shortName": "TSUE",
       "location": "Turkmenistan, Mary",
       "votesCount": 7
+    },
+    {
+      "id": 4,
+      "name": "Belarusian State University",
+      "shortName": "BSU",
+      "location": "Belarus, Minsk",
+      "votesCount": 2
+    },
+    {
+      "name": "Belarus state medical university",
+      "shortName": "BSMU",
+      "location": "Belarus, Minsk",
+      "id": 7
     }
   ]
 }

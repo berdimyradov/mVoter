@@ -22,7 +22,7 @@
                 <td>{{user.username}}</td>
                 <td>{{user.password}}</td>
                 <td class="actions">
-                  <a class="btn btn-info" (click)="onUserEdit($edit, user)">
+                  <a class="btn btn-info" (click)="userUpdateModal.show(); onUserEdit($event, user)">
                     <i class="fa fa-edit "></i>
                   </a>
                   <a class="btn btn-danger" (click)="onUserDelete($event, user)">
@@ -31,8 +31,8 @@
                 </td>
             </tbody>
           </table>
-          <!-- <nav>
-            <ul class="pagination">
+          <nav>
+            <!-- <ul class="pagination">
               <li class="page-item">
                 <a class="page-link" href="#">Prev</a>
               </li>
@@ -51,8 +51,12 @@
               <li class="page-item">
                 <a class="page-link" href="#">Next</a>
               </li>
-            </ul>
-          </nav> -->
+            </ul> -->
+
+            <button type="button" class="btn btn-info" data-toggle="modal" (click)="userCreateModal.show()">
+              Add new user
+            </button>
+          </nav>
         </div>
       </div>
     </div>
@@ -60,3 +64,109 @@
   </div>
   <!--/.row-->
 </div>
+
+<div bsModal #userCreateModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="userCreateModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Create new user</h4>
+        <button type="button" class="close" (click)="userCreateModal.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="card">
+            <div class="card-header">
+              <strong>User</strong> Form
+            </div>
+            <div class="card-body">
+              <form action="" method="post" class="form-horizontal">
+                <div class="form-group row">
+                  <label class="col-md-3 col-form-label" for="hf-email">Full name</label>
+                  <div class="col-md-9">
+                    <input type="email" id="hf-email" name="hf-email" class="form-control" placeholder="Enter Email.." [(ngModel)]="user.name">
+                    <span class="help-block">Please enter your full name</span>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-md-3 col-form-label" for="new-username">Username</label>
+                  <div class="col-md-9">
+                    <input type="email" id="new-username" name="username" class="form-control" placeholder="Enter Email.." [(ngModel)]="user.username">
+                    <span class="help-block">Please enter your username</span>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-md-3 col-form-label" for="hf-password">Password</label>
+                  <div class="col-md-9">
+                    <input type="password" id="hf-password" name="hf-password" class="form-control" placeholder="Enter Password.." [(ngModel)]="user.password">
+                    <span class="help-block">Please enter your password</span>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="userCreateModal.hide()">Close</button>
+        <button type="button" class="btn btn-primary" (click)="onUserCreate()">Create</button>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+<div bsModal #userUpdateModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="userUpdateModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Update new user</h4>
+        <button type="button" class="close" (click)="userUpdateModal.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="card">
+            <div class="card-header">
+              <strong>User</strong> Form
+            </div>
+            <div class="card-body">
+              <form action="" method="post" class="form-horizontal">
+                <div class="form-group row">
+                  <label class="col-md-3 col-form-label" for="email">Full name</label>
+                  <div class="col-md-9">
+                    <input type="email" id="email" name="email" class="form-control" placeholder="Enter Email.." [(ngModel)]="selectedUser.name">
+                    <span class="help-block">Please update your full name</span>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-md-3 col-form-label" for="username">Username</label>
+                  <div class="col-md-9">
+                    <input type="email" id="username" name="username" class="form-control" placeholder="Enter Email.." [(ngModel)]="selectedUser.username">
+                    <span class="help-block">Please update your username</span>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-md-3 col-form-label" for="hf-password">Password</label>
+                  <div class="col-md-9">
+                    <input type="password" id="hf-password" name="hf-password" class="form-control" placeholder="Enter Password.." [(ngModel)]="selectedUser.password">
+                    <span class="help-block">Please update your password</span>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="userUpdateModal.hide()">Close</button>
+        <button type="button" class="btn btn-primary" (click)="onUserUpdate()">Update</button>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->

@@ -20,7 +20,7 @@
                 <td>{{university.name}} ({{university.shortName}})</td>
                 <td>{{university.location}}</td>
                 <td class="actions">
-                  <a class="btn btn-info" (click)="onUniversityEdit($edit, university)">
+                  <a class="btn btn-info" (click)="universityUpdateModal.show(); onUniversityEdit($edit, university)">
                     <i class="fa fa-edit "></i>
                   </a>
                   <a class="btn btn-danger" (click)="onUniversityDelete($event, university)">
@@ -29,8 +29,8 @@
                 </td>
             </tbody>
           </table>
-          <!-- <nav>
-            <ul class="pagination">
+         <nav>
+            <!-- <ul class="pagination">
               <li class="page-item">
                 <a class="page-link" href="#">Prev</a>
               </li>
@@ -49,8 +49,12 @@
               <li class="page-item">
                 <a class="page-link" href="#">Next</a>
               </li>
-            </ul>
-          </nav> -->
+            </ul> -->
+
+             <button type="button" class="btn btn-info" data-toggle="modal" (click)="universityCreateModal.show()">
+              Add new university
+            </button>
+          </nav>
         </div>
       </div>
     </div>
@@ -58,3 +62,109 @@
   </div>
   <!--/.row-->
 </div>
+
+<div bsModal #universityCreateModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="universityCreateModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Create new university</h4>
+        <button type="button" class="close" (click)="universityCreateModal.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="card">
+            <div class="card-header">
+              <strong>University</strong> Form
+            </div>
+            <div class="card-body">
+              <form action="" method="post" class="form-horizontal">
+                <div class="form-group row">
+                  <label class="col-md-3 col-form-label" for="hf-email">Full name</label>
+                  <div class="col-md-9">
+                    <input type="email" id="longName" name="longName" class="form-control" placeholder="Enter name..." [(ngModel)]="university.name">
+                    <span class="help-block">Please enter universitie's full name</span>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-md-3 col-form-label" for="new-universityname">University name</label>
+                  <div class="col-md-9">
+                    <input type="text" id="shortName" name="shortName" class="form-control" placeholder="Enter short name.." [(ngModel)]="university.shortName">
+                    <span class="help-block">Please enter universitie's short name</span>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-md-3 col-form-label" for="hf-password">Location</label>
+                  <div class="col-md-9">
+                    <input type="text" id="location" name="location" class="form-control" placeholder="Enter Location.." [(ngModel)]="university.location">
+                    <span class="help-block">Please enter location</span>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="universityCreateModal.hide()">Close</button>
+        <button type="button" class="btn btn-primary" (click)="onUniversityCreate()">Create</button>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+<div bsModal #universityUpdateModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="universityUpdateModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Update new university</h4>
+        <button type="button" class="close" (click)="universityUpdateModal.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="card">
+            <div class="card-header">
+              <strong>University</strong> Form
+            </div>
+            <div class="card-body">
+              <form action="" method="post" class="form-horizontal">
+                <div class="form-group row">
+                  <label class="col-md-3 col-form-label" for="email">Full name</label>
+                  <div class="col-md-9">
+                    <input type="email" id="email" name="email" class="form-control" placeholder="Enter Full name..." [(ngModel)]="selectedUniversity.name">
+                    <span class="help-block">Please update your full name</span>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-md-3 col-form-label" for="universityname">University name</label>
+                  <div class="col-md-9">
+                    <input type="email" id="universityname" name="universityname" class="form-control" placeholder="Enter short name.." [(ngModel)]="selectedUniversity.shortName">
+                    <span class="help-block">Please update your university short name</span>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-md-3 col-form-label" for="location">Location</label>
+                  <div class="col-md-9">
+                    <input type="text" id="location" name="location" class="form-control" placeholder="Enter Locatoin.." [(ngModel)]="selectedUniversity.location">
+                    <span class="help-block">Please update your location</span>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="universityUpdateModal.hide()">Close</button>
+        <button type="button" class="btn btn-primary" (click)="onUniversityUpdate()">Update</button>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->

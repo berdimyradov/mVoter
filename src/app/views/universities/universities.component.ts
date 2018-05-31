@@ -8,6 +8,10 @@ import { environment } from "../../../environments/environment";
 })
 export class UniversitiesComponent implements OnInit {
   universities: any = [];
+  university: any = {};
+  public selectedUniversity: any = {};
+  public universityCreateModal;
+  public universityUpdateModal;
 
   constructor() { }
 
@@ -21,9 +25,42 @@ export class UniversitiesComponent implements OnInit {
     .then(universities => this.universities = universities)
     .catch(error => console.error(error));
   }
+
+  onUniversityCreate() {
+    fetch(`${environment.apiUrl}/universities`, {
+      method: "POST",
+      headers: {
+        Accept: "application/json, text/plain, */*",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(this.university)
+    })
+      .then(res => res.json())
+      .then(u=> {
+        this.universities.push(u);
+        this.university = {};
+      });
+  }
   
   onUniversityEdit(event, university) {
+    this.selectedUniversity = Object.assign({}, university);
+  }
 
+  onUniversityUpdate() {
+    fetch(`${environment.apiUrl}/universities/${this.selectedUniversity.id}`, {
+      method: "PATCH",
+      headers: {
+        Accept: "application/json, text/plain, */*",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(this.university) 
+    })
+      .then(res => res.text())
+      .then(res => {
+        const index = this.universities.findIndex(u => u.id === this.selectedUniversity.id);
+        this.universities[index] = Object.assign({}, this.selectedUniversity);
+      })
+      .catch(error => console.error(error)); 
   }
 
   onUniversityDelete(event, university) {

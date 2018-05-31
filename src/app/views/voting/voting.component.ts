@@ -22,6 +22,7 @@ export class VotingComponent implements OnInit {
   private loadCurrentUserId() {
     this.currentUserId = JSON.parse(localStorage.getItem('currentUser'))['id'];
   }
+
   public getUniversities() {
     fetch(`${environment.apiUrl}/universities`)
     .then(res => res.json())
@@ -30,8 +31,6 @@ export class VotingComponent implements OnInit {
   }
 
   public onVote(index) {
-    console.log(index);
-
     this.universities[index].votesCount++;
 
     fetch(`${environment.apiUrl}/universities/${this.universities[index].id}`, {

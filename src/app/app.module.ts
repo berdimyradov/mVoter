@@ -47,6 +47,7 @@ import { AdminPageLayoutComponent } from './views/admin/admin.page.layout.compon
 import { RatingsComponent } from './views/ratings/ratings.component';
 import { UsersLayoutComponent } from './views/users-layout/users-layout.component';
 import { VotingComponent } from './views/voting/voting.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 @NgModule({
   imports: [
@@ -61,7 +62,8 @@ import { VotingComponent } from './views/voting/voting.component';
     PerfectScrollbarModule,
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
-    ChartsModule
+    ChartsModule,
+    ModalModule.forRoot()
   ],
   declarations: [
     AppComponent,
