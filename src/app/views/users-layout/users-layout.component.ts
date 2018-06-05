@@ -15,4 +15,8 @@ export class UsersLayoutComponent implements OnInit {
   ngOnInit() {
   }
 
+  logout() {
+    localStorage.setItem('currentUser', '');
+  }
+
 }

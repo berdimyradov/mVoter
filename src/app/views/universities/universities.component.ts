@@ -27,6 +27,7 @@ export class UniversitiesComponent implements OnInit {
   }
 
   onUniversityCreate() {
+	this.university.votesCount = 0;
     fetch(`${environment.apiUrl}/universities`, {
       method: "POST",
       headers: {

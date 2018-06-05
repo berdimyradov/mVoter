@@ -85,31 +85,10 @@
   "questions": [],
   "universities": [
     {
-      "id": 5,
-      "name": "Turkmen State University",
-      "shortName": "TSU",
-      "location": "Turkmenistan, Ashgabat",
-      "votesCount": 2
-    },
-    {
-      "id": 1,
-      "name": "Belarusian State University of Informatics and Radioelectronics",
-      "shortName": "BSUIR",
-      "location": "Belarus, Minsk",
-      "votesCount": 6
-    },
-    {
       "id": 3,
       "name": "Baranovichi State University",
       "shortName": "BarSU",
       "location": "Belarus, Baranovichi",
-      "votesCount": 4
-    },
-    {
-      "id": 2,
-      "name": "Minsk State Linguistic University",
-      "shortName": "MSLU",
-      "location": "Belarus, Minsk",
       "votesCount": 4
     },
     {
@@ -120,17 +99,39 @@
       "votesCount": 7
     },
     {
-      "id": 4,
-      "name": "Belarusian State University",
-      "shortName": "BSU",
-      "location": "Belarus, Minsk",
-      "votesCount": 2
+      "id": 5,
+      "name": "Turkmen State University",
+      "shortName": "TSU",
+      "location": "Turkmenistan, Ashgabat",
+      "votesCount": 3
     },
     {
-      "name": "Belarus state medical university",
-      "shortName": "BSMU",
+      "name": "Harvard",
+      "shortName": "HVD",
+      "location": "USA",
+      "votesCount": 0,
+      "id": 9
+    },
+    {
+      "id": 1,
+      "name": "Belarusian State University of Informatics and Radioelectronics",
+      "shortName": "BSUIR",
       "location": "Belarus, Minsk",
-      "id": 7
+      "votesCount": 8
+    },
+    {
+      "name": "Belarusian Medical",
+      "shortName": "Med",
+      "location": "Minsk",
+      "votesCount": 2,
+      "id": 10
+    },
+    {
+      "id": 2,
+      "name": "Minsk State Linguistic University",
+      "shortName": "MSLU",
+      "location": "Belarus, Minsk",
+      "votesCount": 5
     }
   ]
 }

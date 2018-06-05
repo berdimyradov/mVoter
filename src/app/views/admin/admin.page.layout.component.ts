@@ -14,4 +14,8 @@ export class AdminPageLayoutComponent implements OnInit {
   ngOnInit() {
   }
 
+  logout() {
+    localStorage.setItem('currentUser', '');
+  }
+
 }
